@@ -1,0 +1,45 @@
+.container
+  .col-xs-3(ng-controller="NavigationCtrl as navigation_ctrl")
+    h2 Деньги
+    h3.money-ok {{navigation_ctrl.transactions_store.sum()}}
+    ul.nav.nav-pills.nav-stacked
+      li
+        a(href="#")
+          i.glyphicon.glyphicon-th-list
+          |  Транзакции
+          span.badge {{navigation_ctrl.transactions_store.transactions.length}}
+      li
+        a(href="#")
+          i.glyphicon.glyphicon-tasks
+          |  Настройки
+
+  .col-xs-8(ng-controller='TransactionsCtrl as transactions_ctrl')
+    h2 Транзакции
+    br
+
+    form.form-inline(ng-submit="transactions_ctrl.addTransaction()")
+      .form-group
+        .input-group
+          .input-group-addon $
+          input.form-control(type="text" placeholder="Сумма" ng-model="transactions_ctrl.newTransaction.amount")
+      .form-group
+        label.sr-only
+        input.form-control(type="text" placeholder="Описание" ng-model="transactions_ctrl.newTransaction.description")
+      button.btn.btn-default(type="submit") Добавить
+    
+    br
+
+    table.table.table-striped(ng-show="transactions_ctrl.transactions.length")
+      thead
+        tr
+          th Сумма
+          th Дата
+          th Описание
+          th Действия
+      tbody
+        tr(ng-repeat='transaction in transactions_ctrl.transactions')
+          td {{transaction.amount}}
+          td {{transaction.date}}
+          td {{transaction.description}}
+          td
+
