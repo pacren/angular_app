@@ -4,12 +4,12 @@
     h3.money-ok {{navigation_ctrl.transactions_store.sum()}}
     ul.nav.nav-pills.nav-stacked
       li
-        a(href="#")
+        a(ui-sref="/")
           i.glyphicon.glyphicon-th-list
           |  Транзакции
           span.badge {{navigation_ctrl.transactions_store.transactions.length}}
       li
-        a(href="#")
+        a(ui-sref="settings")
           i.glyphicon.glyphicon-tasks
           |  Настройки
 

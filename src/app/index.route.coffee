@@ -2,10 +2,13 @@ angular.module 'spa'
   .config ($stateProvider, $urlRouterProvider) ->
     'ngInject'
     $stateProvider
-      .state 'home',
+      .state 'transaction',
         url: '/'
-        templateUrl: 'app/main/main.html'
-        controller: 'MainController'
-        controllerAs: 'main'
+        templateUrl: 'app/transaction/transaction.html'
+
+      .state 'settings',
+        url: '/settings'
+        templateUrl: 'app/settings/settings.html'
+
 
     $urlRouterProvider.otherwise '/'

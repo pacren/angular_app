@@ -1,4 +1,4 @@
-#src/app/main/transactions.controller.coffee
+#src/app/transaction/transactions.controller.coffee
 angular.module('spa').controller 'TransactionsCtrl', ($scope, TransactionsStore) ->
   @transactions = TransactionsStore.transactions
 

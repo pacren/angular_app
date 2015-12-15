@@ -1,0 +1,18 @@
+.container
+  .col-xs-3(ng-controller="NavigationCtrl as navigation_ctrl")
+    h2 Деньги
+    h3.money-ok {{navigation_ctrl.transactions_store.sum()}}
+    ul.nav.nav-pills.nav-stacked
+      li
+        a(href="#")
+          i.glyphicon.glyphicon-th-list
+          |  Транзакции
+          span.badge {{navigation_ctrl.transactions_store.transactions.length}}
+      li
+        a(href="#")
+          i.glyphicon.glyphicon-tasks
+          |  Настройки
+
+  .col-xs-8(ng-controller='TransactionsCtrl as transactions_ctrl')
+    h2 Настройки
+    br
